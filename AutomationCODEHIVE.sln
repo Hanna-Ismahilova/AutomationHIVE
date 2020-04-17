@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationHIVE", "AutomationHIVE\AutomationHIVE.csproj", "{F70AFB0F-A68D-4A08-B0E9-19A0E5DBE34C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationCodeHive", "AutomationHIVE\AutomationCodeHive.csproj", "{F70AFB0F-A68D-4A08-B0E9-19A0E5DBE34C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
