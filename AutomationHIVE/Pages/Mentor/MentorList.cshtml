@@ -1,4 +1,5 @@
-﻿@page 
+﻿@page
+
 
 @model AutomationCodeHive.Pages.Mentor.MentorListModel
 @{
@@ -48,10 +49,20 @@
            asp-route-mentorId="@mentor.Id">
             <i class="btn btn-secondary">Details</i>
         </a>
+        <a class="btn btn-lg"
+           asp-page="./MentorEdit"
+           asp-route-mentorId="@mentor.Id">
+            <i class="btn btn-secondary">Edit</i>
+        </a>
     </td>
 </tr>
 
 
     }
 </table>
+
+
+<a asp-page="./PostList" class="btn btn-secondary">Add a new post</a>
+
+
 

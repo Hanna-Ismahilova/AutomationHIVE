@@ -1,0 +1,55 @@
+﻿@page "{mentorId:int}"
+@model AutomationCodeHive.MentorEditModel
+@{
+    ViewData["Title"] = "MentorEdit";
+}
+
+<h1>Editing mentor @Model.Mentor.Name</h1>
+
+<form method="post">
+
+    <input type="hidden" asp-for="Mentor.Id" />
+    <div class="form-group">
+        <label asp-for="Mentor.Name"></label>
+        <input asp-for="Mentor.Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="Mentor.Name"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mentor.Surname"></label>
+        <input asp-for="Mentor.Surname" class="form-control" />
+        <span class="text-danger" asp-validation-for="Mentor.Surname"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mentor.Email"></label>
+        <input asp-for="Mentor.Email" class="form-control" />
+        <span class="text-danger" asp-validation-for="Mentor.Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mentor.Phone"></label>
+        <input asp-for="Mentor.Phone" class="form-control" />
+        <span class="text-danger" asp-validation-for="Mentor.Phone"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mentor.Education"></label>
+        <select class="form-control" asp-for="Mentor.Education"
+                asp-items="Model.EducationType">
+        </select>
+        <span class="text-danger" asp-validation-for="Mentor.Education"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mentor.Experience"></label>
+        <input asp-for="Mentor.Experience" class="form-control" />
+        <span class="text-danger" asp-validation-for="Mentor.Experience"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Mentor.Technologies"></label>
+        <select class="form-control" asp-for="Mentor.Technologies"
+                asp-items="Model.TechnologiesStack">
+        </select>
+        <span class="text-danger" asp-validation-for="Mentor.Technologies"></span>
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

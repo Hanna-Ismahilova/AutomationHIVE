@@ -11,6 +11,9 @@ namespace AutomationCodeHive.Data
     {
         IEnumerable<MentorModel> GetMentorByName(string name);
         MentorModel GetById(int id);
+        MentorModel Update(MentorModel updatedMentor);
+        int Commit();
+
     }
 
     public class InMemoryMentorData : IMentorData
@@ -42,6 +45,27 @@ namespace AutomationCodeHive.Data
         public MentorModel GetById(int id)
         {
             return mentors.SingleOrDefault(m => m.Id == id);
+        }
+
+        public MentorModel Update(MentorModel updatedMentor)
+        {
+            var mentor = mentors.SingleOrDefault(m => m.Id == updatedMentor.Id);
+            if (mentor != null)
+            {
+                mentor.Name = updatedMentor.Name;
+                mentor.Surname = updatedMentor.Surname;
+                mentor.Email = updatedMentor.Email;
+                mentor.Phone = updatedMentor.Phone;
+                mentor.Education = updatedMentor.Education;
+                mentor.Experience = updatedMentor.Experience;
+                mentor.Technologies = updatedMentor.Technologies;
+            }
+            return mentor;
+        }
+
+        public int Commit()
+        {
+            return 0;
         }
 
         public IEnumerable<MentorModel> GetMentorByName(string name = null)
