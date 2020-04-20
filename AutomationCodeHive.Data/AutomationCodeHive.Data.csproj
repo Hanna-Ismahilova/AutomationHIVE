@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotlessClientOnly" Version="1.5.2" />
+    <PackageReference Include="Google.AdWords" Version="24.10.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AutomationCodeHive.Core\AutomationCodeHive.Models.csproj" />
+  </ItemGroup>
+
+</Project>

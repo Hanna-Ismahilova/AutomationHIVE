@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationCodeHive", "AutomationHIVE\AutomationCodeHive.csproj", "{F70AFB0F-A68D-4A08-B0E9-19A0E5DBE34C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationCodeHive.Models", "AutomationCodeHive.Core\AutomationCodeHive.Models.csproj", "{676FF514-5B16-4875-B981-C22E8A47EBCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutomationCodeHive.Data", "AutomationCodeHive.Data\AutomationCodeHive.Data.csproj", "{5F397378-A328-4AC9-B1B7-F87AB1FA9EFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{F70AFB0F-A68D-4A08-B0E9-19A0E5DBE34C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F70AFB0F-A68D-4A08-B0E9-19A0E5DBE34C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F70AFB0F-A68D-4A08-B0E9-19A0E5DBE34C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{676FF514-5B16-4875-B981-C22E8A47EBCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{676FF514-5B16-4875-B981-C22E8A47EBCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{676FF514-5B16-4875-B981-C22E8A47EBCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{676FF514-5B16-4875-B981-C22E8A47EBCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F397378-A328-4AC9-B1B7-F87AB1FA9EFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F397378-A328-4AC9-B1B7-F87AB1FA9EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F397378-A328-4AC9-B1B7-F87AB1FA9EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F397378-A328-4AC9-B1B7-F87AB1FA9EFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

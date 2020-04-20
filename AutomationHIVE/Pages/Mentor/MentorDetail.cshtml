@@ -1,0 +1,31 @@
+﻿@page "{mentorId:int}"
+
+@model AutomationCodeHive.MentorDetailModel
+@{
+    ViewData["Title"] = "MentorDetail";
+}
+
+<h2>@Model.MentorModel.Name</h2>
+<div>
+    Id: @Model.MentorModel.Id
+</div>
+<div>Surname: @Model.MentorModel.Surname</div>
+<div>
+    Email: @Model.MentorModel.Email
+</div>
+<div>
+    Phone: @Model.MentorModel.Phone
+</div>
+<div>
+    Education: @Model.MentorModel.Education
+</div>
+<div>
+    Experience: @Model.MentorModel.Experience
+</div>
+<div>
+    Technologies: @Model.MentorModel.Technologies
+</div>
+
+<a asp-page="./MentorList" class="btn btn-primary">All Mentors</a>
+
+

@@ -12,6 +12,7 @@ using AutomationHIVE.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using AutomationCodeHive.Data;
 
 namespace AutomationHIVE
 {
@@ -27,6 +28,9 @@ namespace AutomationHIVE
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Use for paperwork to exlain why we need to add it 'registering a data service'
+            services.AddSingleton<IMentorData, InMemoryMentorData>();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("AutomationCodeHive")));

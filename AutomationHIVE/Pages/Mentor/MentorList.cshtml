@@ -1,7 +1,57 @@
-﻿@page
-@model AutomationCodeHive.Pages.Mentor.MentorModel
+﻿@page 
+
+@model AutomationCodeHive.Pages.Mentor.MentorListModel
 @{
 }
 
-    <h1>List of Mentors</h1>
+<h1>List of Mentors</h1>
+
+
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" placeholder="Search a mentor by name" asp-for="SearchTerm" />
+            <span class="input-group-append">
+                <button class="btn btn-secondary" type="submit">
+                    Search
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
+
+
+<table class="table">
+    <tr>
+        <td><b>Firstname</b></td>
+        <td><b>Lastname</b></td>
+        <td><b>Email</b></td>
+        <td><b>Phone</b></td>
+        <td><b>Degree</b></td>
+        <td><b>Years of experience</b></td>
+        <td><b>Technologies</b></td>
+    </tr>
+    @foreach (var mentor in Model.Mentors)
+    {
+
+<tr>
+    <td>@mentor.Name</td>
+    <td>@mentor.Surname</td>
+    <td>@mentor.Email</td>
+    <td>@mentor.Phone</td>
+    <td>@mentor.Education</td>
+    <td>@mentor.Experience</td>
+    <td>@mentor.Technologies</td>
+    <td>
+        <a class="btn btn-lg"
+           asp-page="./MentorDetail"
+           asp-route-mentorId="@mentor.Id">
+            <i class="btn btn-secondary">Details</i>
+        </a>
+    </td>
+</tr>
+
+
+    }
+</table>
 
