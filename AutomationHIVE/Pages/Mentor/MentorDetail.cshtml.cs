@@ -12,6 +12,9 @@ namespace AutomationCodeHive
     public class MentorDetailModel : PageModel
     {
         private readonly IMentorData mentorData;
+
+        [TempData]
+        public string Message { get; set; }
         public MentorModel MentorModel { get; set; }
 
         public MentorDetailModel(IMentorData mentorData)

@@ -26,12 +26,19 @@ namespace AutomationCodeHive
             this.mentorData = mentorData;
             this.htmlHelper = htmlHelper;
         }
-        public IActionResult OnGet(int mentorId)
+        public IActionResult OnGet(int? mentorId)
         {
             EducationType = htmlHelper.GetEnumSelectList<EducationTypeEnum>();
             TechnologiesStack = htmlHelper.GetEnumSelectList<TechnologiesStackEnum>();
 
-            Mentor = mentorData.GetById(mentorId);
+            if (mentorId.HasValue)
+            {
+                Mentor = mentorData.GetById(mentorId.Value);
+            }
+            else
+            {
+                Mentor = new MentorModel();
+            }
             if (Mentor == null)
             {
                 return RedirectToPage("./NotFound");
@@ -42,16 +49,28 @@ namespace AutomationCodeHive
         public IActionResult OnPost()
         {
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                EducationType = htmlHelper.GetEnumSelectList<EducationTypeEnum>();
+                TechnologiesStack = htmlHelper.GetEnumSelectList<TechnologiesStackEnum>();
+                return Page();
+                
+            }
+            if (Mentor.Id > 0)
             {
                 Mentor = mentorData.Update(Mentor);
-                mentorData.Commit();
-                return RedirectToPage("./MentorDetail", new { mentorId = Mentor.Id});
+                TempData["Message"] = "The mentor is updated!";
             }
-            EducationType = htmlHelper.GetEnumSelectList<EducationTypeEnum>();
-            TechnologiesStack = htmlHelper.GetEnumSelectList<TechnologiesStackEnum>();
+            else
+            {
+                Mentor = mentorData.Add(Mentor);
+                TempData["Message"] = "The new mentor is saved!";
+            }
             
-            return Page();
+            mentorData.Commit();
+            return RedirectToPage("./MentorDetail", new { mentorId = Mentor.Id });
+
+
         }
     }
 }

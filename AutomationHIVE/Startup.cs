@@ -28,6 +28,14 @@ namespace AutomationHIVE
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //Database related config
+            services.AddDbContextPool<AutomationCodeHiveDbContext>(options =>
+            {
+                options.UseSqlServer(Configuration.GetConnectionString("AutomationCodeHive"));
+
+
+            });
             //Use for paperwork to exlain why we need to add it 'registering a data service'
             services.AddSingleton<IMentorData, InMemoryMentorData>();
 

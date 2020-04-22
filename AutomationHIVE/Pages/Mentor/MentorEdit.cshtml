@@ -1,10 +1,18 @@
-﻿@page "{mentorId:int}"
+﻿@page "{mentorId:int?}"
 @model AutomationCodeHive.MentorEditModel
 @{
     ViewData["Title"] = "MentorEdit";
 }
 
-<h1>Editing mentor @Model.Mentor.Name</h1>
+@if (Model.Mentor.Id > 0)
+{
+    <h1>Editing mentor @Model.Mentor.Name</h1>
+}
+else
+{
+    <h1>New mentor</h1>
+}
+
 
 <form method="post">
 

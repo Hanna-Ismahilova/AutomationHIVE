@@ -9,45 +9,53 @@ namespace AutomationCodeHive.Data
 {
     public interface IMentorData
     {
-        IEnumerable<MentorModel> GetMentorByName(string name);
-        MentorModel GetById(int id);
-        MentorModel Update(MentorModel updatedMentor);
+        IEnumerable<MentorModel2> GetMentorByName(string name);
+        MentorModel2 GetById(int id);
+        MentorModel2 Update(MentorModel2 updatedMentor);
+        MentorModel2 Add(MentorModel2 newMentor);
         int Commit();
 
     }
 
     public class InMemoryMentorData : IMentorData
     {
-        List<MentorModel> mentors;
+        List<MentorModel2> mentors;
         public InMemoryMentorData()
         {
-            mentors = new List<MentorModel>()
+            mentors = new List<MentorModel2>()
             { 
-                new MentorModel { Id = 1, Name = "Alisa", Surname = "Perkins", Email = "a.perkins@randatmail.com	", Phone = "598-9402-12", 
+                new MentorModel2 { Id = 1, Name = "Alisa", Surname = "Perkins", Email = "a.perkins@randatmail.com	", Phone = "598-9402-12", 
                      Education = EducationTypeEnum.Master, Experience = 5, User = UserTypeEnum.Mentor, Technologies =  TechnologiesStackEnum.APITests},
                 
-                new MentorModel { Id = 2, Name = "Briony", Surname = "Mason", Email = "b.mason@randatmail.com", Phone = "598-9402-13", 
+                new MentorModel2 { Id = 2, Name = "Briony", Surname = "Mason", Email = "b.mason@randatmail.com", Phone = "598-9402-13", 
                      Education = EducationTypeEnum.Master, Experience = 17, User = UserTypeEnum.Mentor, Technologies =  TechnologiesStackEnum.NoFunctionalTests}, 
                 
-                new MentorModel { Id = 3, Name = "Eleanor", Surname = "Dixon", Email = "e.dixon@randatmail.com", Phone = "183-3358-06", 
+                new MentorModel2 { Id = 3, Name = "Eleanor", Surname = "Dixon", Email = "e.dixon@randatmail.com", Phone = "183-3358-06", 
                      Education = EducationTypeEnum.Master, Experience = 23, User = UserTypeEnum.Mentor, Technologies =  TechnologiesStackEnum.OOP},
                 
-                new MentorModel { Id = 4, Name = "Frederick", Surname = "Harrison", Email = "f.harrison@randatmail.com", Phone = "765-9951-38", 
+                new MentorModel2 { Id = 4, Name = "Frederick", Surname = "Harrison", Email = "f.harrison@randatmail.com", Phone = "765-9951-38", 
                      Education = EducationTypeEnum.Associate, Experience = 2, User = UserTypeEnum.Mentor, Technologies =  TechnologiesStackEnum.UITests},
                 
-                new MentorModel { Id = 5, Name = "Lilianna", Surname = "Montgomery", Email = "l.montgomery@randatmail.com", Phone = "887-9896-16", 
+                new MentorModel2 { Id = 5, Name = "Lilianna", Surname = "Montgomery", Email = "l.montgomery@randatmail.com", Phone = "887-9896-16", 
                      Education = EducationTypeEnum.Master, Experience = 14, User = UserTypeEnum.Mentor, Technologies =  TechnologiesStackEnum.UnitTests},
       
 
             };    
         }
 
-        public MentorModel GetById(int id)
+        public MentorModel2 GetById(int id)
         {
             return mentors.SingleOrDefault(m => m.Id == id);
         }
 
-        public MentorModel Update(MentorModel updatedMentor)
+        public MentorModel2 Add(MentorModel2 newMentor)
+        {
+            mentors.Add(newMentor);
+            newMentor.Id = mentors.Max(m => m.Id) + 1;
+            return newMentor;
+        }
+
+        public MentorModel2 Update(MentorModel2 updatedMentor)
         {
             var mentor = mentors.SingleOrDefault(m => m.Id == updatedMentor.Id);
             if (mentor != null)
@@ -68,7 +76,7 @@ namespace AutomationCodeHive.Data
             return 0;
         }
 
-        public IEnumerable<MentorModel> GetMentorByName(string name = null)
+        public IEnumerable<MentorModel2> GetMentorByName(string name = null)
         {
             return from m in mentors
                    where string.IsNullOrEmpty(name)
