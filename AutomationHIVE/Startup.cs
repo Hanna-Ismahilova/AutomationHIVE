@@ -39,11 +39,11 @@ namespace AutomationHIVE
             //Use for paperwork to exlain why we need to add it 'registering a data service'
             services.AddSingleton<IMentorData, InMemoryMentorData>();
 
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<AutomationCodeHiveDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("AutomationCodeHive")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<AutomationCodeHiveDbContext>();
             services.AddRazorPages();
         }
 

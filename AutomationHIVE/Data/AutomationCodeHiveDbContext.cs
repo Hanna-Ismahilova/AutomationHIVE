@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using AutomationCodeHive.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AutomationHIVE.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class AutomationCodeHiveDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public AutomationCodeHiveDbContext(DbContextOptions<AutomationCodeHiveDbContext> options)
             : base(options)
         {
         }
+        public DbSet<MentorModel> Mentors { get; set; }
     }
 }
