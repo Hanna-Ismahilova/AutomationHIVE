@@ -13,7 +13,7 @@ namespace AutomationCodeHive.Data
         {
 
         }
-        public DbSet<MentorModel2> Mentors { get; set; }
+        public DbSet<MentorModel> Mentors { get; set; }
 
     }
 }
