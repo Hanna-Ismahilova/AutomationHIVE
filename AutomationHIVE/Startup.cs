@@ -37,7 +37,7 @@ namespace AutomationHIVE
 
             });
             //Use for paperwork to exlain why we need to add it 'registering a data service'
-            services.AddSingleton<IMentorData, InMemoryMentorData>();
+            services.AddScoped<IMentorData, SQLMentorData>();
 
             services.AddDbContext<AutomationCodeHiveDbContext>(options =>
                 options.UseSqlServer(

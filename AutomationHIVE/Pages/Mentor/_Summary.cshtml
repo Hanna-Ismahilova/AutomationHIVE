@@ -1,0 +1,37 @@
+﻿@using AutomationCodeHive.Models
+@model MentorModel
+    <div class="card">
+        <div class="card card-header">
+            <h3>@Model.Name</h3>
+        </div>
+        <div class="card-body">
+            <ul>
+                <li><span>Name:@Model.Name </span></li>
+                <li><span>Surname:@Model.Surname </span></li>
+                <li><span>Email:@Model.Email </span></li>
+                <li><span>Phone: @Model.Phone</span></li>
+                <li><span>Education: @Model.Education </span></li>
+                <li><span>Experience: @Model.Experience </span></li>
+                <li><span>Technologies:@Model.Technologies </span></li>
+            </ul>           
+        </div>
+        <div class="card-footer">
+               <a class="btn btn-lg"
+               asp-page="./MentorDetail"
+               asp-route-mentorId="@Model.Id">
+                <i class="btn btn-secondary">Details</i>
+            </a>
+            <a class="btn btn-lg"
+               asp-page="./MentorEdit"
+               asp-route-mentorId="@Model.Id">
+                <i class="btn btn-dark">Edit</i>
+            </a>
+            <a class="btn btn-lg"
+               asp-page="./MentorDelete"
+               asp-route-mentorId="@Model.Id">
+                <i class="btn btn-danger">Delete</i>
+            </a>
+
+        </div>    
+        
+    </div>

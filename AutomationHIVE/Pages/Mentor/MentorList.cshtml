@@ -22,45 +22,11 @@
 </form>
 
 
-<table class="table">
-    <tr>
-        <td><b>Firstname</b></td>
-        <td><b>Lastname</b></td>
-        <td><b>Email</b></td>
-        <td><b>Phone</b></td>
-        <td><b>Degree</b></td>
-        <td><b>Years of experience</b></td>
-        <td><b>Technologies</b></td>
-    </tr>
-    @foreach (var mentor in Model.Mentors)
-    {
+@foreach (var mentor in Model.Mentors)
+{
+    <partial  name="_Summary" model="mentor"/>
 
-        <tr>
-            <td>@mentor.Name</td>
-            <td>@mentor.Surname</td>
-            <td>@mentor.Email</td>
-            <td>@mentor.Phone</td>
-            <td>@mentor.Education</td>
-            <td>@mentor.Experience</td>
-            <td>@mentor.Technologies</td>
-            <td>
-                <a class="btn btn-lg"
-                   asp-page="./MentorDetail"
-                   asp-route-mentorId="@mentor.Id">
-                    <i class="btn btn-secondary">Details</i>
-                </a>
-                <a class="btn btn-lg"
-                   asp-page="./MentorEdit"
-                   asp-route-mentorId="@mentor.Id">
-                    <i class="btn btn-secondary">Edit</i>
-                </a>
-            </td>
-        </tr>
-
-
-    }
-</table>
-
+}
 <a asp-page="./MentorEdit" class="btn btn-secondary">Add a new mentor</a>
 
 <a asp-page="./PostList" class="btn btn-secondary">Add a new post</a>
