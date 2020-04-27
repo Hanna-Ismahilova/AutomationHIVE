@@ -14,7 +14,7 @@ namespace AutomationHIVE.Data.Migrations
     [Migration("20200422115751_AddMentorModel")]
     partial class AddMentorModel
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
