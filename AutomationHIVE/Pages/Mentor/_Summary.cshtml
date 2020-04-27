@@ -8,15 +8,11 @@
             <ul>
                 <li><span>Name:@Model.Name </span></li>
                 <li><span>Surname:@Model.Surname </span></li>
-                <li><span>Email:@Model.Email </span></li>
-                <li><span>Phone: @Model.Phone</span></li>
-                <li><span>Education: @Model.Education </span></li>
-                <li><span>Experience: @Model.Experience </span></li>
                 <li><span>Technologies:@Model.Technologies </span></li>
             </ul>           
         </div>
         <div class="card-footer">
-               <a class="btn btn-lg"
+            <a class="btn btn-lg"
                asp-page="./MentorDetail"
                asp-route-mentorId="@Model.Id">
                 <i class="btn btn-secondary">Details</i>
@@ -30,6 +26,11 @@
                asp-page="./MentorDelete"
                asp-route-mentorId="@Model.Id">
                 <i class="btn btn-danger">Delete</i>
+            </a>
+            <a class="btn btn-lg"
+               asp-page="./Chat"
+               asp-route-mentorId="@Model.Id">
+                <i class="btn btn-outline-dark">Text me</i>
             </a>
 
         </div>    
