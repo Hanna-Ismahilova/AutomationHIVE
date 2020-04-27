@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace AutomationHIVE.Data.Migrations
+namespace AutomationHIVE.Data.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

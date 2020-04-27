@@ -5,7 +5,7 @@ using AutomationCodeHive.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace AutomationHIVE.Data
+namespace AutomationHIVE.Data.Data.Migrations
 {
     public class AutomationCodeHiveDbContext : IdentityDbContext
     {
