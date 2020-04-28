@@ -1,0 +1,23 @@
+﻿@page
+@model AutomationCodeHive.ClientMentorsModel
+@{
+    ViewData["Title"] = "ClientMentors";
+}
+
+<h1>Client Mentors</h1>
+
+@section Scripts{
+
+    <script>
+         //jQuery usage in the app
+        $(function()
+        {
+            $.ajax("/api/mentormodels/",
+                { method: "get" })
+                .then(function (response) {
+                    console.dir(response);
+                });
+        });
+    </script>
+}
+

@@ -12,6 +12,7 @@ namespace AutomationCodeHive.Data
         MentorModel Update(MentorModel updatedMentor);
         MentorModel Add(MentorModel newMentor);
         MentorModel Delete(int id);
+        int GetCountOfMentors();
         int Commit();
 
     }

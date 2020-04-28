@@ -13,9 +13,7 @@ else
     <h1>New mentor</h1>
 }
 
-
 <form method="post">
-
     <input type="hidden" asp-for="Mentor.Id" />
     <div class="form-group">
         <label asp-for="Mentor.Name"></label>
@@ -58,7 +56,13 @@ else
 
     </div>
 
-
     <button type="submit" class="btn btn-primary">Save</button>
     <a asp-page="MentorList" class="btn btn-secondary">Cancel</a>
 </form>
+
+@*Todo: add scrolling*@
+
+
+@section Scripts{ 
+<partial name="_ValidationScriptsPartial"/>
+}

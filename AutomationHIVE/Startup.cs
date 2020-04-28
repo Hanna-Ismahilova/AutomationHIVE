@@ -34,8 +34,8 @@ namespace AutomationHIVE
             {
                 options.UseSqlServer(Configuration.GetConnectionString("AutomationCodeHive"));
 
-
             });
+
             //Use for paperwork to exlain why we need to add it 'registering a data service'
             services.AddScoped<IMentorData, SQLMentorData>();
 
@@ -45,6 +45,8 @@ namespace AutomationHIVE
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<AutomationCodeHiveDbContext>();
             services.AddRazorPages();
+            //controllers (to make changes related to controllers work)
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,6 +67,7 @@ namespace AutomationHIVE
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            //controllers (to make changes related to controllers work)
             app.UseRouting();
 
             app.UseAuthentication();
@@ -73,7 +76,11 @@ namespace AutomationHIVE
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                //controllers (to make changes related to controllers work)
+                endpoints.MapControllers();
+
             });
+       
         }
     }
 }

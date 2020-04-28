@@ -82,5 +82,10 @@ namespace AutomationCodeHive.Data
             }
             return mentor;
         }
+
+        public int GetCountOfMentors()
+        {
+            return mentors.Count();
+        }
     }
 }

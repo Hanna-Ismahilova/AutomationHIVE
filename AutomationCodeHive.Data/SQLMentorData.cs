@@ -43,6 +43,11 @@ namespace AutomationCodeHive.Data
             return db.Mentors.Find(id);
         }
 
+        public int GetCountOfMentors()
+        {
+            return db.Mentors.Count();
+        }
+
         public IEnumerable<MentorModel> GetMentorByName(string name)
         {
             var query = from m in db.Mentors
