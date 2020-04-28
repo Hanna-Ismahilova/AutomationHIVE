@@ -50,7 +50,8 @@ namespace AutomationHIVE
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app,
+                       IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -66,8 +67,12 @@ namespace AutomationHIVE
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            //node to start to work
+            app.UseNodeModules();
+            app.UseCookiePolicy();
 
             //controllers (to make changes related to controllers work)
+            //UseRouting is used now instead of app.UseMvc();
             app.UseRouting();
 
             app.UseAuthentication();

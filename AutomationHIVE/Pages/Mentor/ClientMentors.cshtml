@@ -4,18 +4,46 @@
     ViewData["Title"] = "ClientMentors";
 }
 
-<h1>Client Mentors</h1>
+<h2>Client Mentors</h2>
 
-@section Scripts{
+<table class="table" id="mentors">
+</table>
+
+@section Scripts
+{
+    <script src="~/node_modules/datatables.net/js/jquery.dataTables.js"></script>
+    <script src="~/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.js"></script>
+    <link href="~/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet" />
+
+    @*<environment include="Development">
+                <script src="C:\Users\Hanna_Ismahilova\Documents\MY_PROJECTS\AutomationHIVE\AutomationHIVE\AutomationHIVE\node_modules\datatables.net\js\jquery.dataTables.js"></script>
+                <script src="C:\Users\Hanna_Ismahilova\Documents\MY_PROJECTS\AutomationHIVE\AutomationHIVE\AutomationHIVE\node_modules\datatables.net-bs4\js\dataTables.bootstrap4.js"></script>
+                <link href="C:\Users\Hanna_Ismahilova\Documents\MY_PROJECTS\AutomationHIVE\AutomationHIVE\AutomationHIVE\node_modules\datatables.net-bs4\css\dataTables.bootstrap4.css" rel="stylesheet" />
+            </environment>
+        <environment exclude="Development">
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css" />
+            <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
+        </environment>*@
 
     <script>
-         //jQuery usage in the app
-        $(function()
-        {
+
+        //jQuery usage in the app
+        $(function () {
             $.ajax("/api/mentormodels/",
                 { method: "get" })
                 .then(function (response) {
-                    console.dir(response);
+                    $("#mentors").dataTable({
+                        data: (response),
+                        columns: [
+                            { "data": "name" },
+                            { "data": "surname" },
+                            { "data": "email" },
+                            { "data": "phone" },
+                            { "data": "education" },
+                            { "data": "experience" },
+                            { "data": "technologies" }
+                        ]
+                    });
                 });
         });
     </script>
