@@ -5,6 +5,10 @@
     {
       "library": "twitter-bootstrap@4.4.0",
       "destination": "wwwroot/twitter-bootstrap/"
+    },
+    {
+      "library": "datatables@1.10.20",
+      "destination": "wwwroot/datatables/"
     }
   ]
 }
