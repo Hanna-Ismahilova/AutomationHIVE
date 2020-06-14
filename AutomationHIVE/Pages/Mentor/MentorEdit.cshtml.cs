@@ -15,7 +15,7 @@ namespace AutomationCodeHive
         private readonly IMentorData mentorData;
         private readonly IHtmlHelper htmlHelper;
 
-        [BindProperty ]
+        [BindProperty]
         public MentorModel Mentor { get; set; }
         public IEnumerable<SelectListItem> EducationType { get; set; }
         public IEnumerable<SelectListItem> TechnologiesStack { get; set; }
@@ -48,7 +48,7 @@ namespace AutomationCodeHive
 
         public IActionResult OnPost()
         {
-
+            //for validation [required]
             if (!ModelState.IsValid)
             {
                 EducationType = htmlHelper.GetEnumSelectList<EducationTypeEnum>();

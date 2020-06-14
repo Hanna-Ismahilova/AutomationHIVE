@@ -5,7 +5,14 @@
     <UserSecretsId>aspnet-AutomationHIVE-77419DF5-7F39-47B9-8DFF-677D787DD5A5</UserSecretsId>
   </PropertyGroup>
 
+  <Target Name="PostBuild" AfterTargets="ComputeFilesToPublish">
+    <Exec Command="npm install"/>
+   </Target>
 
+  <ItemGroup>
+    <Content Include="node_modules/**" CopyToPublshDirectory="PreserveNewest" />
+    </ItemGroup>
+  
   <ItemGroup>
     <PackageReference Include="jQuery" Version="3.5.0.1" />
     <PackageReference Include="jQuery.Validation" Version="1.19.1" />

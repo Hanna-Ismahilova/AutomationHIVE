@@ -20,7 +20,7 @@ namespace AutomationCodeHive.Pages.Mentor
         [BindProperty(SupportsGet = true )]
         public string SearchTerm { get; set; }
         public MentorListModel(IConfiguration configuration, 
-                           IMentorData mentorData)
+                               IMentorData mentorData)
         {
             this.configuration = configuration;
             this.mentorData = mentorData;

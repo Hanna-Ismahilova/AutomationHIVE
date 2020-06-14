@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace AutomationCodeHive.Pages.GeekShop
+namespace AutomationCodeHive.Pages.HiveShop
 {
     public class ListOfItemsModel : PageModel
     {
